@@ -4,55 +4,43 @@
   * {
     @apply scroll-smooth;
   }
-
   html {
     scroll-behavior: smooth;
   }
-
   body {
     @apply bg-linear-to-br from-[#0a0e27] via-[#1a1a3e] to-[#0f0b2e];
   }
-
-  /* Scrollbar Styling */
   ::-webkit-scrollbar {
     @apply w-2;
   }
-
   ::-webkit-scrollbar-track {
     @apply bg-[#0a0e27];
   }
-
   ::-webkit-scrollbar-thumb {
-    @apply bg-[#a78bfa] rounded-full hover:bg-[#c4b5fd];
+    @apply bg-[#a78bfa] rounded-full;
   }
-
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-[#c4b5fd];
   }
 }
 
-@layer components {
-  .card-glass {
-    @apply bg-[#16213e]/80 backdrop-blur-lg rounded-2xl border border-[#3730a3] shadow-lg;
-  }
+@utility card-glass {
+  background: rgba(22, 33, 62, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid #3730a3;
+  border-radius: 1rem;
+}
 
-  .card-interactive {
-    @apply card-glass hover:shadow-lg hover:border-[#a78bfa]/30 hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-0.5;
-  }
+@utility card-interactive {
+  background: rgba(22, 33, 62, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid #3730a3;
+  border-radius: 1rem;
+  transition: all 0.3s;
 
-  .text-primary {
-    @apply text-[#e0e7ff];
-  }
-
-  .text-secondary {
-    @apply text-[#a5b4fc];
-  }
-
-  .gradient-purple {
-    @apply bg-linear-to-r from-[#a78bfa] to-[#7c3aed];
-  }
-
-  .button-primary {
-    @apply linear-purple hover:from-[#c4b5fd] hover:to-[#a78bfa] text-[#0a0e27] font-semibold rounded-lg px-5 py-2.5 transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/40;
+  &:hover {
+    border-color: rgba(167, 139, 250, 0.3);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+    transform: translateY(-2px);
   }
 }
